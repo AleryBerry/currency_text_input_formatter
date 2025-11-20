@@ -7,11 +7,6 @@ https://pub.dev/packages/currency_text_input_formatter
 
 ## Installation
 
-### Add pubspec.yaml
-``` yaml
-dependencies:
-  currency_text_input_formatter: ^2.2.5
-```
 ### Solving Intl package conflict
 Add this code end of pubspec.yaml.
 ``` yaml
@@ -89,7 +84,7 @@ class _MyFormFieldState extends State<MyFormField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      initialValue: _formatter.format('2000'),
+      initialValue: _formatter.formatString('2000'),
       inputFormatters: <TextInputFormatter>[_formatter],
       keyboardType: TextInputType.number,
     );
@@ -171,7 +166,7 @@ class _MyFormFieldState extends State<MyFormField> {
     // Built-in Methods
     print(formatter.getFormattedValue()); // $ 2,000
     print(formatter.getUnformattedValue()); // 2000.00
-    print(formatter.format('2000')); // $ 2,000
+    print(formatter.formatString('2000')); // $ 2,000
     print(formatter.formatDouble('20.00')); // $ 20
 
     return TextFormField(
